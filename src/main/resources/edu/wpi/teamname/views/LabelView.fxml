@@ -1,0 +1,2 @@
+<?import javafx.scene.control.Label?>
+<Label fx:id="totalLabel" fx:controller="edu.wpi.teamname.views.LabelController" xmlns:fx="http://javafx.com/fxml/1"/>
