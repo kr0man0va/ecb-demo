@@ -1,5 +1,6 @@
 package edu.wpi.teamname;
 
+import edu.wpi.teamname.entity.Mortgage;
 import edu.wpi.teamname.views.LabelController;
 import edu.wpi.teamname.views.MainController;
 import java.io.IOException;
@@ -21,12 +22,13 @@ public class App extends Application {
   @Override
   public void start(Stage primaryStage) throws IOException {
     FXMLLoader loader = new FXMLLoader(getClass().getResource("views/MainView.fxml"));
+    Mortgage mortgage = new Mortgage();
     loader.setControllerFactory(
         param -> {
           if (param.equals(LabelController.class)) {
-            return new LabelController();
+            return new LabelController(mortgage);
           } else {
-            return new MainController();
+            return new MainController(mortgage);
           }
         });
     Parent root = loader.load();
